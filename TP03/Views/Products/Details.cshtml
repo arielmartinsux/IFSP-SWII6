@@ -1,0 +1,55 @@
+﻿@model TP03SWII6.Models.Product
+
+@{
+    ViewData["Title"] = "Detalhes do Produto";
+}
+
+<!-- CB3021521 - Gabriel Martins Alves da Silva -->
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Detalhes do Produto</h1>
+
+    <div>
+        <h4 class="text-purple">Informações do Produto</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Nome:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Preço:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+                Quantidade:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
+        </dl>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-purple text-white mr-2">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+    </div>
+</div>
+
+<style>
+    .text-purple {
+        color: #669bbc;
+    }
+    .btn-purple {
+        background-color: #669bbc;
+        border-color: #669bbc
+    }
+    .btn-purple:hover {
+        background-color: #563d7a;
+        border-color: #563d7a;
+    }
+</style>
